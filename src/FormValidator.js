@@ -2,9 +2,12 @@ import Validador from 'validator';
 
 class FormValidator {
 
+    constructor(validacao) {
+        this.validacao = validacao;
+    }
+
     validar(state) {
-        console.log('validado');
-        return false
+        const campoValor = state[this.validacao.campoValor.toString()];
     }
 
 }

@@ -1,24 +1,45 @@
 import React, { Component } from 'react';
 
 
+class Tabela extends Component {
+
+    render() {
+
+        const { autores, removeAutor } = this.props;
+
+        return (
+            <table>
+                <TableHead />
+                <TableBody autores={autores} removeAutor={removeAutor} />
+            </table>
+
+        );
+    }
+
+}
+
 const TableHead = () => {
-    return <thead>
-        <th>Autores</th>
-        <th>Livros</th>
-        <th>Preços</th>
-        <td><button>Remover</button></td>
-    </thead>
+    return (
+        <thead>
+            <tr>
+                <th>Autor</th>
+                <th>Livro</th>
+                <th>Preco</th>
+                <th>Remover</th>
+            </tr>
+        </thead>
+    );
 }
 
 const TableBody = props => {
 
     const linhas = props.autores.map((linhas, index) => {
         return (
-            <tr>
+            <tr key={index}>
                 <td>{linhas.nome}</td>
                 <td>{linhas.livro}</td>
                 <td>{linhas.preco}</td>
-                <td><button>Remover</button></td>
+                <td><button onClick={() => { props.removeAutor(index) }}>Remover</button></td>
             </tr>
         );
     });
@@ -30,20 +51,4 @@ const TableBody = props => {
     );
 }
 
-class Tabela extends Component {
-
-    render() {
-
-        const { autores } = this.props;
-
-        return (
-            <table>
-                <TableHead />
-                <TableBody autores={autores} />
-            </table>
-
-        );
-    }
-
-}
 export default Tabela;

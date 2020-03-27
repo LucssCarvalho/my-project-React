@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
-import 'App.css';
 import Tabela from './table.js';
 import Formulario from './Formulario';
 import Header from './Header';

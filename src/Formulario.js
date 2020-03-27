@@ -23,6 +23,11 @@ class Formulario extends Component {
 
     }
 
+    submitForm = () => {
+        this.props.OnChangeSubmit(this.state);
+        this.setState(this.stateInitial);
+    }
+
     render() {
 
         const { nome, livro, preco } = this.state
@@ -44,7 +49,7 @@ class Formulario extends Component {
                 value={livro}
                 onChange={this.onChangeInput}
             />
-            <label htmlFor='preco'>Preco</label>
+            <label htmlFor='preco'>Preço</label>
             <input
                 id="preco"
                 type="text"
@@ -52,7 +57,7 @@ class Formulario extends Component {
                 value={preco}
                 onChange={this.onChangeInput}
             />
-            <button type="button">Salvar</button>
+            <button onClick={this.submitForm} type="button">Salvar</button>
         </form>
     }
 }

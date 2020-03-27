@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import './App.css';
+import 'materialize-css/dist/css/materialize.min.css';
 import Tabela from './table.js'
 import Formulario from './Formulario';
 
@@ -48,11 +48,16 @@ class App extends Component {
     );
   }
 
+  OnChangeSubmit = autor => {
+    this.setState({ autores: [...this.state.autores, autor] })
+  }
+
   render() {
     return (
       <Fragment>
+        <Formulario OnChangeSubmit={this.OnChangeSubmit} />
         <Tabela autores={this.state.autores} removeAutor={this.removeAutor} />
-        <Formulario />
+
       </Fragment>
     );
   }

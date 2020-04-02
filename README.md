@@ -1,1 +1,1 @@
-## Projeto para aprender React
+projeto para aprender algumas funcionalidades de react.

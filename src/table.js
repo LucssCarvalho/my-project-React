@@ -10,6 +10,7 @@ class Tabela extends Component {
         return (
             <table className="centered highlight">
                 <TableHead />
+                <h2>Catálogo de livro</h2>
                 <TableBody autores={autores} removeAutor={removeAutor} />
             </table>
 

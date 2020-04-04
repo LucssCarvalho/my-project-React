@@ -5,8 +5,6 @@ import Tabela from './table.js';
 import Formulario from './Formulario';
 import Header from './Header';
 
-
-
 class App extends Component {
 
   state = {
